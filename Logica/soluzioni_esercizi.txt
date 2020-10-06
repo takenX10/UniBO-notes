@@ -1,0 +1,49 @@
+X ⊆ X
+D: Sia X un insieme, dobbiamo dimostrare che X ⊆ X, ovvero che ∀Z. Z∈X ⇒ Z∈X. Sia Y un insieme tale che Y ⇒ X(H1), dobbiamo dimostrare che Y⇒X. vero per H1. Qed.
+
+se X ⊆ Y e Y ⊆ X allora X = Y
+D: Siano X e Y due insiemi tali che X⊆Y, ovvero ∀Z. Z∈X ⇒ Z∈Y(H1) e Y⊆X, ovvero ∀Z. Z∈Y ⇒ Z∈X(H2), dobbiamo dimostrare che X=Y, per l'assioma di estensionalita ci basta dimostrare che ∀Z. Z∈X⇔Z∈Y
+Sia Z un insieme
+- Dimostriamo che Z∈X ⇒ Z∈Y; vero per H1.
+- Dimostriamo che Z∈Y ⇒ Z∈X; vero per H2.
+
+se X ⊆ Y e Y ⊆ Z allora X ⊆ Z
+D: Siano X e Y due insiemi tali che X⊆Y, ovvero ∀A. A∈X ⇒ A∈Y(H1), e Y⊆Z, ovvero ∀A. Z∈Y ⇒ A∈Z(H2).Sia A un insieme; Dobbiamo dimostrare che X⊆Z, ovvero che ∀A. A∈X ⇒ A∈Z;  Assumo A∈X(H3); ovvio per H1 e H2; Qed.
+
+∅ ⊆ X
+D: Sia X un insieme. Devo dimostrare che ∅⊆X, ovvero che ∀Z. Z∈∅ ⇒ Z∈X; Sia Z un insieme tale che Z∈∅(H).Assurdo per H e l'assioma dell'insieme vuoto (Z∉∅). Quindi Z∈X. Qed.
+
+se X ⊆ ∅ allora X = ∅.
+D: Sia X un insieme tale che X⊆∅, ovvero ∀Z. Z∈X ⇒ Z∈∅(H1). Dobbiamo dimostrare che X=∅; per l'assioma di estensionalita ci basta dimostrare che ∀Z. Z∈X ⇔ Z∈∅. Sia Z un insieme, 
+- Dimostriamo che Z∈X ⇒ Z∈∅. Vero per H1.
+- Dimostriamo che Z∈∅ ⇒ Z∈X. Assumiamo che Z∈∅(H2). Assurdo per H2 e per l'assioma dell'insieme vuoto. Quindi Z∈X. Qed.
+
+X ∩ ∅ = ∅
+D: Sia X un insieme. Devo dimostrare che X∩∅ = ∅, sia Z un insieme, per l'assioma di estensionalita mi riduco a dimostrare che  ∀Z. Z∈X∩∅ ⇔ Z∈∅; Sia Z un insieme
+- Dimostriamo che Z∈∅ ⇒ Z∈X∩∅; assumiamo che Z∈∅(H1); assurdo per H1 e assioma dell'insieme vuoto. quindi Z∈X∩∅
+- Dimostriamo che Z∈X∩∅ ⇒ Z∈∅; assumiamo che Z∈X∩∅, quindi per il teorema dell'intersezione binaria Z∈X(H2) o Z∈∅(H3); Quindi Z∈∅ per H3. Qed.
+
+X ⊆ X' ⇒ X ∩ Y ⊆ X' ∩ Y
+D: Sia X un insieme tale che X⊆X', ovvero ∀Z. Z∈X ⇒ Z∈X'(H1). Devo dimostrare che X∩Y ⊆ X'∩Y, ovvero che ∀Z. Z∈X∩Y ⇒ Z∈X'∩Y. Sia Z un insieme tale che Z∈X∩Y; devo dimostrare che Z∈X∩Y ⇒ Z∈X'∩Y; assumiamo che Z∈X∩Y, quindi per il teorema dell'intersezione binaria Z∈X (H2) e Z∈Y(H3). Devo dimostrare che Z∈X'∩Y. Per il teorema dell'intersezione binaria basta dimostrare che Z∈X' e Z∈Y. Z∈Y per H3; Z∈X' per H1 e H2; Qed.
+
+X ⊆ X' ⇒ X ∪ Y ⊆ X' ∪ Y
+D: Sia X un insieme tale che X⊆X', ovvero che ∀Z. Z∈X ⇒ Z∈X'(H1). Devo dimostrare che X∪Y ⊆ X'∪Y, ovvero che ∀Z. Z∈X∪Y ⇒ Z∈X'∪Y; Sia Z un insieme tale che Z∈XUY, quindi per l'assioma di unione binaria Z∈X o Z∈Y. Dobbiamo dimostrare che Z∈X'∪Y, quindi per l'assioma di unione binaria ci basta dimostrare che Z∈X' o Z∈Y; procediamo per casi:
+-  caso Z∈X(H2): Z∈X' per H1 e H2.
+-  caso Z∈Y(H2): Z∈Y per H2. Qed.
+
+X ⊆ X ∪ ∅
+D: Sia X un insieme; Devo dimostrare che X⊆X∪∅, ovvero che ∀Z. Z∈X ⇒ Z∈X∪∅; Sia Z un insieme tale che Z∈X(H1); Devo dimostrare che Z∈X∪∅, per l'assioma dell'unione binaria mi basta dimostrare che Z∈X o Z∈∅; dimostro che Z∈X; ovvio per H1; Qed.
+
+X ∪ ∅ ⊆ X
+D: Sia X un insieme; devo dimostrare che X∪∅ ⊆ X, ovvero che ∀Z. Z∈X∪∅ ⇒ Z∈X; Sia Z un insieme tale che Z∈X∪∅, quindi per l'assioma dell'unione binaria Z∈X o Z∈∅; devo dimostrare che Z∈X; procedo per casi:
+- caso Z∈X(H1): ovvio per H1;
+- caso Z∈∅(H1): assurdo per H1 e teorema dell'insieme vuoto; quindi Z∈X; Qed.
+// uso quindi al posto di dire "Y un insieme t.c. Y ∈ X ∪ ∅ (H). Per l'assioma dell'unione binaria e H, Y ∈ X ∨ Y ∈ ∅", non so se e giusto
+
+
+
+
+
+
+se X ∪ Y = Y allora X ⊆ Y
+D: Siano X e Y due insiemi tali che X∪Y=Y, quindi per l'assioma di estensione ∀Z. Z∈X∪Y ⇔ Z∈Y(H1), dobbiamo dimostrare che X⊆Y, ovvero che ∀Z. Z∈X ⇒ Z∈Y. Sia Z un insieme tale che Z∈X(H2); dobbiamo dimostrare che Z∈Y; per H1 mi riduco a dimostrare che Z∈X∪Y; per l'assioma di unione binaria mi riduco a dimostrare che Z∈X o Z∈Y; Dimostro che Z∈X; Ovvio per H2; Qed.
