@@ -40,7 +40,19 @@ D: Sia X un insieme; devo dimostrare che X∪∅ ⊆ X, ovvero che ∀Z. Z∈X�
 - caso Z∈∅(H1): assurdo per H1 e teorema dell'insieme vuoto; quindi Z∈X; Qed.
 // uso quindi al posto di dire "Y un insieme t.c. Y ∈ X ∪ ∅ (H). Per l'assioma dell'unione binaria e H, Y ∈ X ∨ Y ∈ ∅", non so se e giusto
 
+se X ⊆ Y allora X ∩ Y = X
+D: Siano X e Y due insiemi tali che X⊆Y, ovvero che ∀Z. Z∈X ⇒ Z∈Y(H1); devo dimostrare che X∩Y = X, per l'assioma di estensionalita mi basta dimostrare che ∀Z. Z∈X∩Y ⇔ Z∈X; Sia Z un insieme:
+- dimostro che Z∈X∩Y ⇒ Z∈X; Assumiamo che Z∈X∩Y, per la teoria di intersezione binaria Z∈X ∧ Z∈Y (H2); dimostro che Z∈X; ovvio per H2.
+- dimostro che Z∈X ⇒ Z∈X∩Y; Assumiamo che Z∈X(H2); devo dimostrare che Z∈X∩Y, quindi per la teoria di intersezione binaria mi basta dimostrare che Z∈X ∧ Z∈Y; dimostro che Z∈X, ovvio per H2; dimostro per Z∈Y, ovvio per H2 e H1; Qed.
 
+se X ⊆ Y allora X ∪ Y = Y
+D: Siano X e Y due insiemi tali che X⊆Y, ovvero che ∀Z. Z∈X ⇒ Z∈Y(H1), devo dimostrare che X∪Y = Y, quindi per l'assioma di estensionalita mi basta dimostrare che ∀Z. Z∈X∪Y ⇔ Z∈Y; Sia Z un insieme:
+- Dimostro che Z∈Y ⇒ Z∈X∪Y; Assumiamo Z∈Y(H2); Devo dimostrare che Z∈X∪Y, quindi per l'assioma di unione binaria mi basta dimostrare che Z∈X ∨ Z∈Y; dimostro che Z∈Y, ovvio per H2;
+- Dimostro che Z∈X∪Y ⇒ Z∈Y; Assumiamo Z∈X∪Y, quindi per l'assioma di unione binaria Z∈X ∨ Z∈Y(H2); devo dimostrare che Z∈Y, procedo per casi su H2:
+    - Caso Z∈X(H3): dimostro che Z∈Y, ovvio per H1 e H3;
+    - Caso Z∈Y(H3): dimostro che Z∈Y, ovvio per H3;
+Qed.
+// ricordati di procedere per casi su una determinata ipotesi, questo esercizio ne è un esempio
 
 
 
