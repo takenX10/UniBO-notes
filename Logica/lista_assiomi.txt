@@ -1,0 +1,12 @@
+Assioma di estensionalità ⇒ X = Y se "∀Z. Z∈X ⇔ Z∈Y"
+Definizione di essere sottoinsieme ⇒ X ⊆ Y ≝ "∀Z. Z∈X ⇒ Z∈Y"
+Assioma di separazione ⇒ 
+Assioma dell’insieme vuoto ⇒ ∀Z. Z∉∅
+Definizione di intersezione binaria ⇒ X ∩ Y ≝ ∀Z. Z∈X ∧ Z∈Y
+Teorema dell'intersezione binaria ⇒ X ∈ A∩B ⇔ X∈A ∧ X∈B
+Assioma dell’unione ⇒ X ∪ Y ≝ dato un insieme Z∈X∪Y ⇒ ∀Z. Z∈X ∨ Z∈Y
+Assioma del singoletto
+Assioma dell’infinito
+Assioma dell’insieme potenza
+
+

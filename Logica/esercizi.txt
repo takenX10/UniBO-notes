@@ -1,5 +1,16 @@
-1) X ⊆ X ∪ ∅
-2) X ∪ ∅ ⊆ X
-3) se X ⊆ Y allora X ∩ Y = X
-4) se X ⊆ Y allora X ∪ Y = Y
-5) se X ∪ Y = Y allora X ⊆ Y
+X ⊆ X
+se X ⊆ Y e Y ⊆ X allora X = Y
+se X ⊆ Y e Y ⊆ Z allora X ⊆ Z
+∅ ⊆ X
+se X ⊆ ∅ allora X = ∅.
+X ∩ ∅ = ∅
+X ⊆ X' ⇒ X ∩ Y ⊆ X' ∩ Y
+X ⊆ X' ⇒ X ∪ Y ⊆ X' ∪ Y
+X ⊆ X ∪ ∅
+X ∪ ∅ ⊆ X
+se X ⊆ Y allora X ∩ Y = X
+se X ⊆ Y allora X ∪ Y = Y
+se X ∪ Y = Y allora X ⊆ Y
+
+
+

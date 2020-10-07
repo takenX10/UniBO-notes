@@ -1,0 +1,16 @@
+∀x.P(x)         “sia x (un insieme) fissato; . . .”
+
+P ⇒ Q           "Assumo P (H). . . .”
+Espandere def   "P, ovvero Q”
+Per dimostrare P ⇐⇒ Q si dimostra sia P ⇒ Q che Q ⇒ P
+“dobbiamo dimostrare P”
+“ovvio”
+Assurdo ⇒ concludo qualsiasi cosa
+Non P e un’abbreviazione per ` P ⇒ assurdo.
+    per dimostrare non P si assume che P valga e si dimostra l’assurdo
+
+P ∧ Q ⇒ si dimostrano sia P che Q
+
+    Un’ipotesi o un risultato intermedio P ∧ Q puo essere usato sia come P che come Q.
+
+    invece di concludere o assumere P ∧ Q (H), si puo direttamente concludere o assumere P (H1) e Q (H2).
