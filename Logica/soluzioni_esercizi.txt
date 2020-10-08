@@ -38,7 +38,7 @@ X ∪ ∅ ⊆ X
 D: Sia X un insieme; devo dimostrare che X∪∅ ⊆ X, ovvero che ∀Z. Z∈X∪∅ ⇒ Z∈X; Sia Z un insieme tale che Z∈X∪∅, quindi per l'assioma dell'unione binaria Z∈X o Z∈∅; devo dimostrare che Z∈X; procedo per casi:
 - caso Z∈X(H1): ovvio per H1;
 - caso Z∈∅(H1): assurdo per H1 e teorema dell'insieme vuoto; quindi Z∈X; Qed.
-// uso quindi al posto di dire "Y un insieme t.c. Y ∈ X ∪ ∅ (H). Per l'assioma dell'unione binaria e H, Y ∈ X ∨ Y ∈ ∅", non so se e giusto
+// uso quindi al posto di dire "Y un insieme t.c. Y ∈ X ∪ ∅ (H). Per l'assioma dell'unione binaria...", non so se e giusto
 
 se X ⊆ Y allora X ∩ Y = X
 D: Siano X e Y due insiemi tali che X⊆Y, ovvero che ∀Z. Z∈X ⇒ Z∈Y(H1); devo dimostrare che X∩Y = X, per l'assioma di estensionalita mi basta dimostrare che ∀Z. Z∈X∩Y ⇔ Z∈X; Sia Z un insieme:

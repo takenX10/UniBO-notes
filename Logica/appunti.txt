@@ -1,0 +1,3 @@
+# appunti relazioni
+
+differenza tra equivalenza e uguaglianza: uguaglianza = due elementi sono uguali, equivalenza = una parte di due elementi è uguale in entrambi.
