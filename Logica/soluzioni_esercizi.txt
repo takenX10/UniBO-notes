@@ -61,9 +61,15 @@ se X ∪ Y = Y allora X ⊆ Y
 D: Siano X e Y due insiemi tali che X∪Y=Y, quindi per l'assioma di estensione ∀Z. Z∈X∪Y ⇔ Z∈Y(H1), dobbiamo dimostrare che X⊆Y, ovvero che ∀Z. Z∈X ⇒ Z∈Y. Sia Z un insieme tale che Z∈X(H2); dobbiamo dimostrare che Z∈Y; per H1 mi riduco a dimostrare che Z∈X∪Y; per l'assioma di unione binaria mi riduco a dimostrare che Z∈X o Z∈Y; Dimostro che Z∈X; Ovvio per H2; Qed.
 
 se X∩Y = X allora X⊆Y
-D: Siano X,Y due insiemi tali che X∩Y = X, quindi per l'assioma di estensionalita ∀Z. Z∈X∩Y ⇔ Z∈X(H1). Devo dimostrare che X⊆Y, ovvero che ∀Z. Z∈X ⇒ Z∈Y; sia Z un insieme tale che Z∈X(H2), dimostro che Z∈Y, ovvio per H1, H2 e il teorema di intersezione binaria. Qed. 
+D: Siano X,Y due insiemi tali che X∩Y = X, quindi per l'assioma di estensionalita ∀Z. Z∈X∩Y ⇔ Z∈X(H1). Devo dimostrare che X⊆Y, ovvero che ∀Z. Z∈X ⇒ Z∈Y; sia Z un insieme tale che Z∈X(H2), devo dimostrare che Z∈Y; per H1 sappiamo che Z∈X∩Y ⇒ Z∈X , quindi per il teorema di intersezione binaria sappiamo che Z∈X ∨ Z∈Y ⇒ Z∈X(H3); devo dimostrare che Z∈Y, per H3 mi riduco a dimostrare che Z∈X, ovvio per H2. Qed. 
 
 X∩(Y∪Z) ⊆ (X∩Y) ∪ (X∩Z)
 D: siano X,Y,Z tre insiemi; devo dimostrare che X∩(Y∪Z) ⊆ (X∩Y) ∪ (X∩Z), ovvero che ∀A. A∈X∩(Y∪Z) ⇒ A∈(X∩Y)∪(X∩Z); Sia A un insieme tale che A∈X∩(Y∪Z), quindi per il teorema di intersezione binaria A∈X(H1) e A∈Y∪Z, quindi per l'assioma di unione binaria A∈Y ∨ A∈Z(H2); devo dimostrare che A∈(X∩Y)∪(X∩Z); procedo per casi:
 - caso A∈Y(H3): devo dimostrare che A∈(X∩Y)∪(X∩Z), quindi per l'assioma di unione binaria mi riduco a dimostrare che A∈X∩Y o Z∈X∩Z; dimostro A∈X∩Y, quindi per il teorema di intersezione binaria devo dimostrare che A∈X e A∈Y; dimostro che A∈X, ovvio per H1; dimostro che A∈Y, ovvio per H3.
 - caso A∈Z(H3):
+
+Y={Z∈X|P(X)}  ∀X, ∃Y, ∀Z,(Z ∈ Y ⇐⇒ Z ∈ X ∧ P(Z))
+
+c(W) = { Y∈U | Y∉W }
+se X⊆Y allora c(Y) ⊆ c(X)
+D: Siano X,Y due insiemi tali che X⊆Y, ovvero ∀Z. Z∈X ⇒ Z∈Y(H1), sia U un insieme tale che c(W) = { Z∈U | Z∉W }, ovvero che ∀Z.∀W. Z∈U ⇒ Z∉W(H2), dobbiamo dimostrare che c(Y)⊆c(X), ovvero che ∀Z.Z∈c(Y) ⇒ Z∈c(X). Sia A un insieme tale che A∈c(Y), quindi per H2 A∉Y(H3), devo dimostrare che A∈c(X), per H2 mi riduco a dimostrare che A∉X; Assumiamo che A∈X, assurdo per H1 e H3, quindi A∉X. Qed.
