@@ -1,0 +1,28 @@
+Teorema: per ogni insieme A e per ogni f,g∈A^A, se f e g sono funzioni suriettive allora anche h(x) = f(g(x)) lo e'
+
+Dimostrazione: Siano A un insieme e f,g ∈ A^A t.c. f e' suriettiva, ovvero che ∀y∈A.∃x∈A.f(x)=y (H1), e g e' suriettiva, ovvero che ∀y'∈A.∃x'∈A.g(x')=y' (H2). Dobbiamo dimostrare che h e' suriettiva, ovvero che ∀y∈A.∃g(x)∈A.f(g(x))=y.
+sia x tale che x∈A(H3), per H2 e H3 mi riduco a dimostrare che ∀y∈A.∃y'∈A.f(y')=y, ovvio per H1. Qed.
+
+
+
+Teorema: sia c(x) = {Y∈U | Y∉X}, se X⊆Y, allora X∩c(Y) = ∅
+
+Dimostrazione: Siano X,Y due insiemi tali che X⊆Y, ovvero che ∀Z.Z∈X⇒Z∈Y (H1), devo dimostrare che X∩c(Y) = ∅, quindi per il teorema di intersezione binaria e l'assioma di estensionalita' mi riduco a dimostrare che ∀Z. Z∈X∧Z∈c(Y) ⇔ Z∈∅; Sia A un insieme, procedo per casi:
+- Caso A∈X∧A∈c(Y): per ipotesi sappiamo che A∈X(H2) e A∈c(Y), quindi per l'assioma di separazione A∈U(H3) e A∉X(H4); devo dimostrare che A∈∅, per H2 e H4 assurdo, quindi A∈∅.
+- Caso A∈∅(H2): devo dimostrare che ∀A. A∈X∧A∈c(Y); per H2 e assioma dell'insieme vuoto assurdo, quindi A∈X∧A∈c(Y). Qed.
+
+
+Teorema: Per ogni relazione di equivalenza ≡ su A, A⊆∪A/≡
+
+Dimostrazione: Sia A un insieme, dobbiamo dimostrare che A⊆UA/≡, ovvero che ∀Z.Z∈A ⇒ Z∈UA/≡. Sia Z un insieme tale che Z∈A, devo dimostrare che Z∈UA/≡, per la definizione dell'insieme quoziente mi riduco a dimostrare che 
+
+
+
+
+W/≡ def == {[x]≡ | x ∈ A}
+[x]≡ def == {y ∈ A | y ≡ x}
+3)
+Teorema: per ogni relazione di equivalenza ≡ su A, A ⊆ UA/≡
+
+Dimostrazione: Sia A un insieme, dobbiamo dimostrare che A⊆UA/≡, ovvero che ∀Z.Z∈A ⇒ Z∈UW/≡. Sia Z un insieme tale che Z∈A(H1), devo dimostrare che Z∈UW/≡. 
+Per l’assioma dell’unione mi riduco a dimostrare ∃Y.(Y∈W/≡ ∧ Z∈Y). Scelgo Y=A e dimostro A∈W/≡ ∧ Z∈A. Z∈A ovvio per H1. Dimostro A∈ W/≡. Per la definizione di insieme quoziente e l’assioma di separazione ci limitiamo a dimostrare che A∈[x]≡ e A∈W. dimostro che A∈W, 
