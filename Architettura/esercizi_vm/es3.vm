@@ -1,0 +1,317 @@
+// Scrivere un programma per la VM che stampa un puntino sullo
+// schermo e consente di spostarlo usando le frecce
+// Versione semplificata: sposta un segmento orizzontale lungo 16
+// pixel (che in orizzontale si sposta di 16 pixel alla volta)
+// Per risolvere questo esercizio occorrono i segmenti pointer e
+// that per accedere a schermo e tastiera
+// that 0 consente di accedere alla locazione di memoria puntata da
+// pointer 1, per cui metto in pointer 1 il puntatore alla locazione
+// alla quale voglio accedere
+
+push constant 24576     //keyboard address
+push constant 16384     //screen address
+call es3.main 2
+
+// arg0 = keyboard, arg1 = screen
+function es3.main 2
+push argument 1
+push constant 1
+call es3.draw 2     //disegno il primo punto
+push argument 1
+pop local 1
+label loop
+    push argument 0
+    pop pointer 1
+    push that 0         
+    push constant 130
+    call es3.diversi 2
+    if-goto if2
+    push local 1              //if sinistra
+    call es3.moveleft 1
+    pop local 1
+    goto end2
+label if2
+    push that 0
+    push constant 131
+    call es3.diversi 2
+    if-goto if3
+    push local 1                    //if su
+    call es3.moveup 1
+    pop local 1
+    goto end2
+label if3
+    push that 0
+    push constant 132
+    call es3.diversi 2
+    if-goto if4
+    push local 1          //if destra
+    call es3.moveright 1
+    pop local 1
+    goto end2
+label if4
+    push that 0
+    push constant 133
+    call es3.diversi 2
+    if-goto end2
+    push local 1                //if giu
+    call es3.movedown 1
+    pop local 1
+label end2
+    call es3.sleep 0
+    pop local 0     // solo per togliere l'output della sleep
+    goto loop
+return
+
+// restituisce il valore 1000 0000 0000 0000
+// uguale a -32768
+function es3.lastbit 0
+    push constant 0
+    push constant 32767
+    sub
+    push constant 1
+    sub
+return
+
+//argument 0 = current pointer
+//chiamare in questo modo:
+// push local 1
+// call es3.moveright 1
+// pop local 1
+// e' una sorta di passaggio per riferimento
+// Nota bene, 2^15 == 32,768, quindi lavoriamo su valori da -32,768 a 32,768
+function es3.moveright 2
+    push argument 0
+    pop local 0
+    push argument 0
+    pop pointer 1
+    push argument 0
+    push constant 16383
+    sub
+    push constant 32
+    call es3.modulus 2
+    push constant 0
+    eq
+    push that 0
+    call es3.lastbit 0
+    eq
+    and
+    if-goto end         //if (address - 16384 + 1) mod 32 == 0 and m[address] == 65536 dont move
+    push that 0
+    call es3.lastbit 0
+    eq
+    if-goto if2        //if last bit goto end 2
+    push that 0
+    push constant 16384
+    eq
+    if-goto if3
+    push argument 0
+    push that 0
+    push that 0
+    add
+    call es3.draw 2
+    goto end
+label if3
+    push argument 0
+    call es3.lastbit 0
+    call es3.draw 2
+    goto end
+label if2
+    push argument 0
+    call es3.delete 1
+    push argument 0
+    push constant 1
+    add
+    pop local 0
+    push local 0
+    push constant 1
+    call es3.draw 2
+label end
+    push local 0
+return
+
+// guarda descrizione moveright
+function es3.moveleft 1
+    push argument 0
+    pop local 0
+    push argument 0
+    pop pointer 1
+    push argument 0
+    push constant 16384
+    sub
+    push constant 32
+    call es3.modulus 2
+    push constant 0
+    eq
+    push that 0
+    push constant 1
+    eq
+    and
+    if-goto end                     // if (address - 16384) mod 32 == 0 and m[address] == 1 dont move
+    push that 0
+    push constant 1
+    eq
+    if-goto if1
+    call es3.lastbit 0
+    push that 0
+    eq
+    if-goto if2
+    push local 0
+    push that 0
+    call es3.dividebytwo 1
+    call es3.draw 2
+    goto end
+label if1
+    push local 0
+    push constant 1
+    sub
+    pop local 0
+    push local 0
+    call es3.lastbit 0
+    call es3.draw 2
+    push argument 0
+    call es3.delete 1
+    goto end
+label if2
+    push argument 0
+    push constant 16384
+    call es3.draw 2
+label end
+    push local 0
+return
+
+//guarda moveright
+function es3.movedown 2
+    push argument 0
+    pop local 0
+    push local 0
+    push constant 32
+    add
+    push constant 24575
+    gt
+    if-goto end                 //if (address + 32) < 24575 move
+    push argument 0
+    pop pointer 1
+    push argument 0
+    push constant 32
+    add
+    pop local 0
+    push local 0
+    push that 0
+    call es3.draw 2
+    push argument 0
+    call es3.delete 1
+label end
+    push local 0
+return
+
+//guarda moveright
+function es3.moveup 1
+    push argument 0
+    pop local 0
+    push local 0
+    push constant 32
+    sub
+    push constant 16384
+    lt
+    if-goto end                 //if (address - 32) > 16384 move
+    push argument 0
+    pop pointer 1
+    push argument 0
+    push constant 32
+    sub
+    pop local 0
+    push local 0
+    push that 0
+    call es3.draw 2
+    push argument 0
+    call es3.delete 1
+
+label end
+    push local 0
+return
+
+
+// arg0 = pointer addr
+function es3.delete 1
+    push argument 0
+    pop pointer 1
+    push constant 0
+    pop that 0
+return
+
+// controlla che arg0 e arg1 siano diversi
+function es3.diversi 0
+    push argument 0
+    push argument 1
+    gt
+    push argument 0
+    push argument 1
+    lt
+    or
+return
+
+//disegna nello screen, arg0 = puntatore dove disegnare, arg1 = valore da inserire
+function es3.draw 0
+    push argument 0
+    pop pointer 1
+    push that 0
+    push argument 1
+    pop that 0
+return
+
+// fa una sleep
+function es3.sleep 2
+    push constant 5000        //costante di sleep, incrementa questa e aumenta la sleep
+    pop local 1
+    push constant 0
+    pop local 0 
+label while
+    push local 1
+    push local 0
+    eq
+    if-goto end
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto while
+label end
+return
+
+// 2 arguments needed, x%y arg0 is x and arg1 is y 
+function es3.modulus 1
+    push argument 0
+    pop local 0
+label while
+    push local 0
+    push argument 1
+    lt
+    if-goto end
+    push local 0
+    push argument 1
+    sub
+    pop local 0
+    goto while
+label end
+    push local 0
+return
+
+
+function es3.dividebytwo 1
+    push constant 1
+    pop local 0
+label while
+    push local 0
+    push local 0
+    add
+    push argument 0
+    eq
+    if-goto end
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto while
+label end
+    push local 0
+return

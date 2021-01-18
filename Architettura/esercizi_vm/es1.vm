@@ -1,0 +1,81 @@
+// Scrivere un programma per la VM che inserisce nello stack i numeri
+// primi minori di 20
+
+
+call es1.main 0
+
+//main, no arguments needed
+function es1.main 3
+push constant 2
+pop local 0
+label WHILEL20
+    push local 0
+    push constant 20 
+    eq
+    if-goto END20
+    push constant 2
+    pop local 1
+    push constant 0
+    pop local 2
+label while2
+    push local 1
+    push local 0
+    eq
+    if-goto end2
+    push local 0
+    push local 1
+    call es1.modulus 2      //a%b
+    push constant 0         //checks if a%b >0 or a%b < 0
+    lt
+    push local 0
+    push local 1
+    call es1.modulus 2
+    push constant 0
+    gt
+    or
+    if-goto if1
+    push constant 1       // c = 1
+    pop local 2
+label if1
+    push local 1        //b++
+    push constant 1
+    add
+    pop local 1         //fine b++
+    goto while2         
+label end2
+    push constant 1     // if c!=1
+    push local 2
+    eq
+    if-goto if2
+    push local 0
+label if2
+
+    push local 0        //a++
+    push constant 1
+    add
+    pop local 0         //fine a++
+    goto WHILEL20
+label END20
+label endwhile
+    goto endwhile
+return    
+
+
+// 2 arguments needed, x%y arg0 is x and arg1 is y
+// in realta' non fa proprio il modulo
+function es1.modulus 1
+    push argument 0
+    pop local 0
+label while
+    push local 0
+    push argument 1
+    lt
+    if-goto end
+    push local 0
+    push argument 1
+    sub
+    pop local 0
+    goto while
+label end
+    push local 0
+return

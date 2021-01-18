@@ -1,0 +1,281 @@
+// DISCLAIMER: tutte le etichette che ho "assegnato qua"
+// avranno valori differenti nel .asm finale, ho lasciato
+// temporaneamente questi solo per chiarezza :)
+
+//push constant val
+    @{val}
+    D = A
+    @SP
+    A = M
+    M = D
+    @SP
+    M = M + 1
+
+//push local/argument n
+    @{n}
+    D = A
+    @LCL/ARG
+    A = M + D
+    D = M
+    @SP
+    A = M
+    M = D
+    @SP
+    M = M + 1
+
+//push static n
+    @{filename}.{n}
+    D = M
+    @SP
+    A = M
+    M = D
+    @SP
+    M = M + 1
+
+// pop local/argument n
+    @{n}
+    D = A
+    @ARG/LCL
+    D = M + D
+    @5
+    M = D
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @5
+    A = M
+    M = D
+
+// pop static n
+    @{filename}.{n}
+    D = A
+    @5
+    M = D
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @5
+    A = M
+    M = D
+
+// add
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @SP
+    A = M - 1
+    M = D + M
+
+// sub
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @SP
+    A = M - 1
+    M = M - D
+
+// neg
+    @SP
+    A = M - 1
+    M = -M
+
+// and
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @SP
+    A = M - 1
+    M = M&D
+
+// or
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @SP
+    A = M - 1
+    M = M|D
+
+// not
+    @SP
+    A = M - 1
+    M = !M
+
+// eq
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @SP
+    A = M - 1
+    D = M - D
+    @UGUALI
+    D;JEQ
+    @SP
+    A = M - 1
+    M = 0
+    @NEXTEQ
+    0;JMP
+    (UGUALI)
+    @SP
+    A = M - 1
+    M = -1
+    (NEXTEQ)
+
+// gt
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @SP
+    A = M - 1
+    D = M - D
+    @MAGGIORE
+    D;JGT
+    @SP
+    A = M - 1
+    M = 0
+    @NEXTGT
+    0;JMP
+    (MAGGIORE)
+    @SP
+    A = M - 1
+    M = -1
+    (NEXTGT)
+
+// lt
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @SP
+    A = M - 1
+    D = M - D
+    @MINORE
+    D;JLT
+    @SP
+    A = M - 1
+    M = 0
+    @NEXTLT
+    0;JMP
+    (MINORE)
+    @SP
+    A = M - 1
+    M = -1
+    (NEXTLT)
+
+// label nomelabel
+    ({nomelabel})
+
+// goto label
+    @{label}
+    0;JMP
+
+// if-goto label
+    @SP
+    M = M - 1
+    A = M
+    D = M
+    @{label}
+    D;JGT
+    D;JLT
+
+//function fname nlocal
+    ({fname})
+    for(int i = 0;i<nlocal;i++){
+        push("0");
+    }
+
+// call fname narg
+    @{RETURN_ADDRESS_VALUE}
+    D = A
+    @SP
+    A = M
+    M = D       
+    @SP
+    M = M + 1 // push ret-addr
+    @LCL
+    D = M
+    @SP
+    A = M
+    M = D
+    @SP
+    M = M + 1 // push LCL
+    @ARG
+    D = M
+    @SP
+    A = M
+    M = D
+    @SP
+    M = M + 1 // push ARG
+    @0
+    D = A
+    @SP
+    A = M
+    M = D
+    @SP
+    M = M + 1 // THIS (lasciato a 0 per ora)
+    @0
+    D = A
+    @SP
+    A = M
+    M = D
+    @SP
+    M = M + 1 // THAT (lasciato a 0 per ora)
+    @SP
+    D = M
+    @{narg}
+    D = D - A
+    @5
+    D = D - A
+    @ARG
+    M = D  // ARG = SP - N - 5
+    @SP
+    D = M   
+    @LCL   
+    M = D   //LCL = SP
+    @{fname}
+    0;JMP
+    ({RETURN_ADDRESS_VALUE})
+
+// return
+    @SP
+    A = M - 1
+    D = M
+    @ARG
+    A = M
+    M = D       // ARG[0] = last pushed value 
+    @ARG
+    D = M
+    @SP
+    M = D + 1   // SP = ARG + 1
+    @LCL
+    D = M
+    @FRAME
+    M = D - 1   // FRAME = LCL - 1
+    //qua va messo THAT
+    @FRAME
+    M = M - 1
+    //qua va messo THIS
+    @FRAME
+    M = M - 1
+    A = M
+    D = M
+    @ARG
+    M = D   // ARG = old arg (FRAME - 3)
+    @FRAME
+    M = M - 1
+    A = M
+    D = M
+    @LCL
+    M = D   // LCL = old LCL (FRAME - 4)
+    @FRAME
+    M = M - 1
+    A = M
+    A = M
+    0;JMP

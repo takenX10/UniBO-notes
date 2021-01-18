@@ -1,0 +1,30 @@
+parsa file da .asm a esercizio
+due etichette di fila buggano
+togliere etichette e commenti
+a instruction
+c instruction
+jump
+
+
+
+
+c5 = 1 se:
+    -
+    1
+    0
+    D+a
+
+C1 = 1 se:
+    A/M && not D
+
+C3 = 1 se:
+    D && not A/M
+
+C2 = 1 se:
+    A && not & and not A/M - D
+    D + 1
+
+C4= 1 se:
+    0 == D || 1 == D && 1 !=&
+
+

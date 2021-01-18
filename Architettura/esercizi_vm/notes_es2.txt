@@ -1,0 +1,33 @@
+
+void muovi_sinistra(puntatore screen, ){
+
+}
+
+
+
+int main(){
+    while(true){
+        if(tasto_premuto == right){
+            muovi_destra();
+        }
+        if(tasto_premuto == left){
+            muovi_sinistra();
+        }
+        if(tasto_premuto == up){
+            muovi_up();
+        }
+        if(tasto_premuto == down){
+            muovi_down();
+        }
+        sleep(50);
+    }
+}
+
+
+int dividebytwo(int n){
+    int a = 1;
+    while(a + a != n){
+        a = a + 1;
+    }
+    return a;
+}
