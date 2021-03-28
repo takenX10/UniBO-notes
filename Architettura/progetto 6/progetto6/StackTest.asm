@@ -5,404 +5,381 @@ M = D
 @17
 D = A
 @SP
-A = M
-M = D
-@SP
 M = M + 1
-
+A = M - 1
+M = D
 @17
 D = A
 @SP
-A = M
-M = D
-@SP
 M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
 A = M - 1
-D = M - D
+M = D
 @LABEL1
-D;JEQ
-@SP
-A = M - 1
-M = 0
-@LABEL2
+D = A
+@DEFAULT_EQ_IMPLEMENTATION
+M = D
 0;JMP
 (LABEL1)
-@SP
-A = M - 1
-M = -1
-(LABEL2)
-
 @17
 D = A
 @SP
-A = M
-M = D
-@SP
 M = M + 1
-
+A = M - 1
+M = D
 @16
 D = A
 @SP
-A = M
+M = M + 1
+A = M - 1
 M = D
+@LABEL2
+D = A
+@DEFAULT_EQ_IMPLEMENTATION
+M = D
+0;JMP
+(LABEL2)
+@16
+D = A
 @SP
 M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
 A = M - 1
-D = M - D
+M = D
+@17
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
 @LABEL3
-D;JEQ
-@SP
-A = M - 1
-M = 0
-@LABEL4
+D = A
+@DEFAULT_EQ_IMPLEMENTATION
+M = D
 0;JMP
 (LABEL3)
+@892
+D = A
 @SP
+M = M + 1
 A = M - 1
-M = -1
+M = D
+@891
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
+@LABEL4
+D = A
+@DEFAULT_LT_IMPLEMENTATION
+M = D
+0;JMP
 (LABEL4)
-
-@16
+@891
 D = A
 @SP
-A = M
-M = D
-@SP
 M = M + 1
-
-@17
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
 A = M - 1
-D = M - D
+M = D
+@892
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
 @LABEL5
-D;JEQ
-@SP
-A = M - 1
-M = 0
-@LABEL6
+D = A
+@DEFAULT_LT_IMPLEMENTATION
+M = D
 0;JMP
 (LABEL5)
-@SP
-A = M - 1
-M = -1
-(LABEL6)
-
-@892
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
 @891
 D = A
 @SP
-A = M
+M = M + 1
+A = M - 1
 M = D
+@891
+D = A
 @SP
 M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
 A = M - 1
-D = M - D
+M = D
+@LABEL6
+D = A
+@DEFAULT_LT_IMPLEMENTATION
+M = D
+0;JMP
+(LABEL6)
+@32767
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
+@32766
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
 @LABEL7
-D;JLT
-@SP
-A = M - 1
-M = 0
-@LABEL8
+D = A
+@DEFAULT_GT_IMPLEMENTATION
+M = D
 0;JMP
 (LABEL7)
+@32766
+D = A
 @SP
+M = M + 1
 A = M - 1
-M = -1
+M = D
+@32767
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
+@LABEL8
+D = A
+@DEFAULT_GT_IMPLEMENTATION
+M = D
+0;JMP
 (LABEL8)
-
-@891
+@32766
 D = A
 @SP
-A = M
-M = D
-@SP
 M = M + 1
-
-@892
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
 A = M - 1
-D = M - D
+M = D
+@32766
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
 @LABEL9
-D;JLT
-@SP
-A = M - 1
-M = 0
-@LABEL10
+D = A
+@DEFAULT_GT_IMPLEMENTATION
+M = D
 0;JMP
 (LABEL9)
-@SP
-A = M - 1
-M = -1
-(LABEL10)
-
-@891
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@891
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
-A = M - 1
-D = M - D
-@LABEL11
-D;JLT
-@SP
-A = M - 1
-M = 0
-@LABEL12
-0;JMP
-(LABEL11)
-@SP
-A = M - 1
-M = -1
-(LABEL12)
-
-@32767
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@32766
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
-A = M - 1
-D = M - D
-@LABEL13
-D;JGT
-@SP
-A = M - 1
-M = 0
-@LABEL14
-0;JMP
-(LABEL13)
-@SP
-A = M - 1
-M = -1
-(LABEL14)
-
-@32766
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@32767
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
-A = M - 1
-D = M - D
-@LABEL15
-D;JGT
-@SP
-A = M - 1
-M = 0
-@LABEL16
-0;JMP
-(LABEL15)
-@SP
-A = M - 1
-M = -1
-(LABEL16)
-
-@32766
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@32766
-D = A
-@SP
-A = M
-M = D
-@SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
-D = M
-@SP
-A = M - 1
-D = M - D
-@LABEL17
-D;JGT
-@SP
-A = M - 1
-M = 0
-@LABEL18
-0;JMP
-(LABEL17)
-@SP
-A = M - 1
-M = -1
-(LABEL18)
-
 @57
 D = A
 @SP
-A = M
-M = D
-@SP
 M = M + 1
-
+A = M - 1
+M = D
 @31
 D = A
 @SP
-A = M
-M = D
-@SP
 M = M + 1
-
+A = M - 1
+M = D
 @53
 D = A
 @SP
-A = M
+M = M + 1
+A = M - 1
 M = D
 @SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
+AM = M - 1
 D = M
-@SP
-A = M - 1
+A = A - 1
 M = D + M
-
 @112
 D = A
 @SP
-A = M
+M = M + 1
+A = M - 1
 M = D
 @SP
-M = M + 1
-
-@SP
-M = M - 1
-A = M
+AM = M - 1
 D = M
-@SP
-A = M - 1
+A = A - 1
 M = M - D
-
 @SP
 A = M - 1
 M = -M
-
 @SP
-M = M - 1
-A = M
+AM = M - 1
 D = M
-@SP
-A = M - 1
+A = A - 1
 M = M&D
-
 @82
 D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
+@SP
+AM = M - 1
+D = M
+A = A - 1
+M = M|D
+@SP
+A = M - 1
+M = !M
+@END_OF_THE_PROGRAM
+0;JMP
+(DEFAULT_CALL_IMPLEMENTATION)
+@15
+D = M
+@SP
+A = M
+M = D 
+@SP
+M = M + 1
+@LCL
+D = M
 @SP
 A = M
 M = D
 @SP
 M = M + 1
-
+@ARG
+D = M
 @SP
-M = M - 1
 A = M
+M = D
+@SP
+M = M + 1
+@THIS
+D = M
+@SP
+A = M
+M = D
+@SP
+M = M + 1
+@THAT
+D = M
+@SP
+A = M
+M = D
+@SP
+M = M + 1
+@SP
+D = M
+@5
+D = D - A
+@14
+D = D - M
+@ARG
+M = D
+@SP
+D = M
+@LCL
+M = D
+@13
+A = M
+0;JMP
+(DEFAULT_RETURN_IMPLEMENTATION)
+@5
+D = A
+@LCL
+A = M - D
+D = M
+@R13
+M = D
+@SP
+A = M - 1
+D = M
+@ARG
+A = M
+M = D
+@ARG
+D = M
+@SP
+M = D + 1
+@LCL
+D = M
+@FRAME
+AM = D - 1
+D = M
+@THAT
+M = D
+@FRAME
+AM = M - 1
+D = M
+@THIS
+M = D
+@FRAME
+AM = M - 1
+D = M
+@ARG
+M = D
+@FRAME
+AM = M - 1
+D = M
+@LCL
+M = D
+@R13
+A = M
+0;JMP
+(DEFAULT_LT_IMPLEMENTATION)
+@SP
+AM = M - 1
 D = M
 @SP
 A = M - 1
-M = M|D
-
+D = M - D
+@DEFAULT_LT_IF_IMPLEMENTATION
+D;JLT
 @SP
 A = M - 1
-M = !M
-
+M = 0
+@DEFAULT_LT_IF2_IMPLEMENTATION
+0;JMP
+(DEFAULT_LT_IF_IMPLEMENTATION)
+@SP
+A = M - 1
+M = -1
+(DEFAULT_LT_IF2_IMPLEMENTATION)
+@DEFAULT_LT_IMPLEMENTATION
+A = M
+0;JMP
+(DEFAULT_GT_IMPLEMENTATION)
+@SP
+AM = M - 1
+D = M
+@SP
+A = M - 1
+D = M - D
+@DEFAULT_GT_IF_IMPLEMENTATION
+D;JGT
+@SP
+A = M - 1
+M = 0
+@DEFAULT_GT_IF2_IMPLEMENTATION
+0;JMP
+(DEFAULT_GT_IF_IMPLEMENTATION)
+@SP
+A = M - 1
+M = -1
+(DEFAULT_GT_IF2_IMPLEMENTATION)
+@DEFAULT_GT_IMPLEMENTATION
+A = M
+0;JMP
+(DEFAULT_EQ_IMPLEMENTATION)
+@SP
+AM = M - 1
+D = M
+@SP
+A = M - 1
+D = M - D
+@DEFAULT_EQ_IF_IMPLEMENTATION
+D;JGT
+@SP
+A = M - 1
+M = 0
+@DEFAULT_EQ_IF2_IMPLEMENTATION
+0;JMP
+(DEFAULT_EQ_IF_IMPLEMENTATION)
+@SP
+A = M - 1
+M = -1
+(DEFAULT_EQ_IF2_IMPLEMENTATION)
+@DEFAULT_EQ_IMPLEMENTATION
+A = M
+0;JMP
+(END_OF_THE_PROGRAM)

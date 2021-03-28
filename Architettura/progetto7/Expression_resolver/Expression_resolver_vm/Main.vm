@@ -1,0 +1,218 @@
+function Main.main 0
+label main_start
+call Screen.clearScreen 0
+push constant 1
+push constant 1
+call Output.moveCursor 2
+call Main.caricato 0
+call Main.recursive_start 0
+call Output.printInt 1
+label if_not_enter
+call Keyboard.keyPressed 0
+push constant 128           // enter
+eq
+if-goto main_start
+goto if_not_enter
+return
+
+function Main.recursive_start 5
+push constant 0
+pop local 0         // val = 0
+push constant 0
+pop local 1         // val2 = 0
+push constant 1
+pop local 2         // first = 1
+label loop_start
+call Keyboard.readChar 0
+pop local 3     // c = getch()
+push local 3
+push constant 48
+gt
+push local 3
+push constant 48
+eq
+or
+push local 3
+push constant 57
+lt
+push local 3
+push constant 57
+eq
+or
+and     //if(c>= '0' && c <= '9')
+if-goto if_numero
+goto else_if1
+label if_numero
+push local 0
+push constant 10
+call Math.multiply 2 //val * 10
+push local 3
+push constant 48        // ascii_to_int(c)
+sub
+add
+pop local 0
+goto loop_start
+label else_if1
+push local 3
+push constant 40
+eq
+if-goto if_tonda
+goto else_if2
+label if_tonda
+call Main.recursive_start 0
+pop local 0             //val = start();
+goto loop_start
+label else_if2
+push local 3
+push constant 43        // +
+if-goto operand_if
+push local 3
+push constant 45
+if-goto operand_if      // -
+push local 3
+push constant 42
+if-goto operand_if      // *
+push local 3
+push constant 47
+if-goto operand_if      // /
+push local 3
+push constant 37
+if-goto operand_if  // %
+push local 3
+push constant 41
+if-goto operand_if  // )
+push local 3
+push constant 61
+if-goto operand_if  // =
+goto loop_start
+label operand_if
+push local 2
+push constant 0
+eq
+if-goto first_operand
+push local 0
+pop local 1         // val2 = val
+push constant 0
+pop local 0         // val = 0
+push constant 0
+pop local 2         // first = 0
+push local 3
+pop local 4         // operand = c
+goto loop_start
+label first_operand
+push local 4
+push constant 43
+eq
+not
+if-goto next_switch_1
+push local 1
+push local 0
+add
+pop local 1
+goto next_if            // case '+'
+label next_switch_1
+push local 4
+push constant 45        
+eq
+not
+if-goto next_switch_2
+push local 1
+push local 0
+sub
+pop local 1
+goto next_if           // case '-'
+label next_switch_2
+push local 4
+push constant 42
+eq
+not
+if-goto next_switch_3
+push local 1
+push local 0
+call Math.multiply 2
+pop local 1
+goto next_if            // case '*'             
+label next_switch_3
+push local 4
+push constant 47
+eq
+not
+if-goto next_switch_4
+push local 1
+push local 0
+call Math.divide 2
+pop local 1
+goto next_if            // case '/'
+label next_switch_4
+push local 4
+push constant 37
+eq
+not
+if-goto next_if
+push local 1
+push local 0
+call Main.modulus 2
+pop local 1             // case '%'
+label next_if
+push local 3
+push constant 41
+eq
+push local 3
+push constant 61
+eq
+or
+if-goto end_of_function     // if(c == ')' || c == '=')
+push constant 0
+pop local 0                 // val = 0
+push local 3
+pop local 4                 // operand = c
+goto loop_start
+label end_of_function
+push local 1
+return
+
+function Main.modulus 1
+push argument 0
+push argument 1
+call Math.divide 2
+push argument 1
+call Math.multiply 2
+pop local 0
+push argument 0
+push local 0
+sub
+return
+
+
+
+// Funzione che scrive la stringa "Equazione: " 
+// appena il programma e' inizializzato
+function Main.caricato 0
+push constant 69
+call Output.printChar 1
+push constant 83
+call Output.printChar 1
+push constant 80
+call Output.printChar 1
+push constant 82
+call Output.printChar 1
+push constant 69
+call Output.printChar 1
+push constant 83
+call Output.printChar 1
+push constant 83
+call Output.printChar 1
+push constant 73
+call Output.printChar 1
+push constant 79
+call Output.printChar 1
+push constant 78
+call Output.printChar 1
+push constant 69
+call Output.printChar 1
+push constant 58
+call Output.printChar 1
+push constant 32
+call Output.printChar 1
+push constant 0
+return

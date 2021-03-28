@@ -3,9 +3,9 @@ D: Sia X un insieme, dobbiamo dimostrare che X ⊆ X, ovvero che ∀Z. Z∈X ⇒
 
 se X ⊆ Y e Y ⊆ X allora X = Y
 D: Siano X e Y due insiemi tali che X⊆Y, ovvero ∀Z. Z∈X ⇒ Z∈Y(H1) e Y⊆X, ovvero ∀Z. Z∈Y ⇒ Z∈X(H2), dobbiamo dimostrare che X=Y, per l'assioma di estensionalita ci basta dimostrare che ∀Z. Z∈X⇔Z∈Y
-Sia Z un insieme
-- Dimostriamo che Z∈X ⇒ Z∈Y; vero per H1.
-- Dimostriamo che Z∈Y ⇒ Z∈X; vero per H2.
+Sia A un insieme
+- Dimostriamo che A∈X ⇒ A∈Y; vero per H1.
+- Dimostriamo che A∈Y ⇒ A∈X; vero per H2.
 
 se X ⊆ Y e Y ⊆ Z allora X ⊆ Z
 D: Siano X e Y due insiemi tali che X⊆Y, ovvero ∀A. A∈X ⇒ A∈Y(H1), e Y⊆Z, ovvero ∀A. Z∈Y ⇒ A∈Z(H2).Sia A un insieme; Dobbiamo dimostrare che X⊆Z, ovvero che ∀A. A∈X ⇒ A∈Z;  Assumo A∈X(H3); ovvio per H1 e H2; Qed.

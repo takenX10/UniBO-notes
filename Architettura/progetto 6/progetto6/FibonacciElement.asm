@@ -132,6 +132,13 @@ M = D
 @SP
 M = M + 1
 
+@5
+D = A
+@LCL
+A = M - D
+D = M
+@R13
+M = D
 @SP
 A = M - 1
 D = M
@@ -160,9 +167,7 @@ A = M
 D = M
 @LCL
 M = D
-@FRAME
-M = M - 1
-A = M
+@R13
 A = M
 0;JMP
 
@@ -332,6 +337,13 @@ D = M
 A = M - 1
 M = D + M
 
+@5
+D = A
+@LCL
+A = M - D
+D = M
+@R13
+M = D
 @SP
 A = M - 1
 D = M
@@ -360,9 +372,7 @@ A = M
 D = M
 @LCL
 M = D
-@FRAME
-M = M - 1
-A = M
+@R13
 A = M
 0;JMP
 

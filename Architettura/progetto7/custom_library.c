@@ -3,7 +3,6 @@
 #include<stdio.h>
 #include<math.h>
 #include "custom_library.h"
-
 // esegue una inserimento in testa della stringa name nella lista passata
 struct label* head_insert(struct label *head, char name[]){
     struct label *aux = (struct label *) malloc(sizeof(struct label));
@@ -121,4 +120,66 @@ void newlabel(char string[], struct label *head, int *counter){
         esiste = exist(head, string);
         *counter = *counter + 1;
     }while(esiste);
+}
+
+// restituisce il puntatore alla posizione in cui la stringa str e' contenuto in head->line 
+struct lineafile* moveto(char str[], struct lineafile* head){
+    char useless[128];
+    char nomefun[128];
+    split(str, useless, nomefun, ' ');
+    split(nomefun, nomefun, useless, ' ');
+    struct lineafile* aux=head;
+    while(aux != NULL && (!is_contained("function", aux->linea) || !is_contained(nomefun, aux->linea))){
+        aux = aux->next;
+    }
+    return aux;
+}
+
+// collega due liste
+void merge_list(struct label *a, struct label *b){
+    struct label *aux= a;
+    while(aux->next!=NULL){
+        aux = aux->next;
+    }
+    aux->next = b;
+}
+
+// restituisce 1 se la stringa str e' contenuta in almeno un elemento della lista, 0 altrimenti
+int contenuto(char str[], struct label *lista){
+    int cont = 0;
+    struct label *aux = lista;
+    while(!cont && aux != NULL){
+        if(is_contained(str, aux->name)){
+            cont++;
+        }
+        aux = aux->next;
+    }
+    return cont;
+}
+
+// esegue un tail insert in una lista label
+void tail_insert(struct label *head, char str[]){
+    struct label *aux = (struct label*) malloc(sizeof(struct label));
+    aux->next = NULL;
+    strcpy(aux->name, str);
+    while(head->next != NULL){
+        head = head->next;
+    }
+    head->next = aux;
+}
+
+// printa la lista lineafile passata
+void printlist(struct lineafile *head){
+    while(head != NULL){
+        printf("%s\n",head->linea);
+        head = head->next;
+    }
+}
+
+//printa la lista label passata
+void printlistalabel(struct label *head){
+    while(head != NULL){
+        printf("%s\n",head->name);
+        head = head->next;
+    }
 }

@@ -25,5 +25,16 @@ int exist(struct label *head, char string[]);
 // crea una label non usata
 void newlabel(char string[], struct label *head, int *counter);
 
+struct lineafile* moveto(char str[], struct lineafile* head);
+
+void merge_list(struct label *a, struct label *b);
+
+int contenuto(char str[], struct label *lista);
+
+void tail_insert(struct label *head, char str[]);
+
+void printlist(struct lineafile *head);
+
+void printlistalabel(struct label *head);
 
 #endif

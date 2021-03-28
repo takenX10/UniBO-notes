@@ -3,6 +3,8 @@
 #include "main.h"
 #include "custom_library.h"
 
+FILE* default_implementations(FILE *fp);
+
 FILE* andd(FILE *fp);
 
 FILE* orr(FILE *fp);
@@ -23,17 +25,17 @@ FILE* gt(FILE *fp, struct label *head, int *counter);
 
 FILE* lt(FILE *fp, struct label *head, int *counter);
 
-FILE* label(char string[], FILE *fp);
+FILE* label(char string[],char current_fname[], FILE *fp);
 
-FILE* if_goto(char string[], FILE *fp);
+FILE* if_goto(char string[], char current_fname[], FILE *fp);
 
-FILE* gotoo(char string[], FILE *fp); 
+FILE* gotoo(char string[], char current_fname[], FILE *fp); 
 
-FILE* function(char string[], FILE *fp);
+FILE* function(char string[], char current_fname[], FILE *fp);
 
-FILE* push(char string[], char filename[], FILE *fp);
+FILE* push(char string[], char filename[], char current_fname[], FILE *fp);
 
-FILE* pop(char string[], char filename[], FILE *fp);
+FILE* pop(char string[], char filename[], char current_fname[], FILE *fp);
 
 FILE* call(char string[], FILE *fp, struct label *head, int *counter);
 

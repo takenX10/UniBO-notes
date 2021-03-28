@@ -65,6 +65,13 @@ FILE* nott(FILE *fp){
 }
 
 FILE* returnn(FILE *fp){
+    fprintf(fp, "@5\n");
+    fprintf(fp, "D = A\n");
+    fprintf(fp, "@LCL\n");
+    fprintf(fp, "A = M - D\n");
+    fprintf(fp, "D = M\n");
+    fprintf(fp, "@R13\n");
+    fprintf(fp, "M = D\n");
     fprintf(fp, "@SP\n");
     fprintf(fp, "A = M - 1\n");
     fprintf(fp, "D = M\n");
@@ -93,9 +100,7 @@ FILE* returnn(FILE *fp){
     fprintf(fp, "D = M\n");
     fprintf(fp, "@LCL\n");
     fprintf(fp, "M = D\n");
-    fprintf(fp, "@FRAME\n");
-    fprintf(fp, "M = M - 1\n");
-    fprintf(fp, "A = M\n");
+    fprintf(fp, "@R13\n");
     fprintf(fp, "A = M\n");
     fprintf(fp, "0;JMP\n\n");
     return fp;
