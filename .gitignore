@@ -1,2 +1,8 @@
 *.exe
 *.zip
+obsidian/.obsidian/app.json
+obsidian/.obsidian/app.json
+obsidian/.obsidian/appearance.json
+obsidian/.obsidian/core-plugins.json
+obsidian/.obsidian/graph.json
+obsidian/.obsidian/workspace
