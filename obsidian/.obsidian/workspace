@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "de67120728adddec",
+    "type": "split",
+    "children": [
+      {
+        "id": "9a3184ea54f34bf5",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4d236b1bab2368ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "faffb908399a9525",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bcf179ae1a985ea1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e0b74c31b5d078fd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "87fffefbed80c721",
+    "type": "split",
+    "children": [
+      {
+        "id": "e95032bfe830e7f1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "76a672ad90e69cb8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "9a3184ea54f34bf5",
+  "lastOpenFiles": [
+    "Calcolo_Numerico/Lista Argomenti Calcolo Numerico.md",
+    "Calcolo_Numerico/Soluzioni minimi quadrati.md",
+    "Calcolo_Numerico/Sistemi lineari.md",
+    "Calcolo_Numerico/Lista funzioni laboratorio.md",
+    "Ottimizzazione_combinatoria/Programmazione lineare reale.md",
+    "Ottimizzazione_combinatoria/Flussi/Accoppiamenti di Costo minimo.md",
+    "Ottimizzazione_combinatoria/Flussi/Accoppiamento di Massima cardinalità.md",
+    "Ottimizzazione_combinatoria/Flussi/Problemi di accoppiamento.md",
+    "Sistemi_operativi/Lista syscall.md",
+    "Sistemi_operativi/Esecuzione concorrente.md"
+  ]
+}

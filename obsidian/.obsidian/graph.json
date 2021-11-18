@@ -1,0 +1,58 @@
+{
+  "collapse-filter": true,
+  "search": "tag:#ottimizzazione_combinatoria",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "tag:#argomento_chiave",
+      "color": {
+        "a": 1,
+        "rgb": 5562450
+      }
+    },
+    {
+      "query": "tag:#calcolo_numerico",
+      "color": {
+        "a": 1,
+        "rgb": 61183
+      }
+    },
+    {
+      "query": "tag:#ottimizzazione_combinatoria",
+      "color": {
+        "a": 1,
+        "rgb": 16756224
+      }
+    },
+    {
+      "query": "tag:#sistemi_operativi",
+      "color": {
+        "a": 1,
+        "rgb": 15728640
+      }
+    },
+    {
+      "query": "tag:#reti",
+      "color": {
+        "a": 1,
+        "rgb": 2755277
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": -3,
+  "nodeSizeMultiplier": 1.00842696629213,
+  "lineSizeMultiplier": 1.69662921348315,
+  "collapse-forces": true,
+  "centerStrength": 0.478632478632479,
+  "repelStrength": 15.0561797752809,
+  "linkStrength": 1,
+  "linkDistance": 173,
+  "scale": 0.6914402821220516,
+  "close": false
+}
